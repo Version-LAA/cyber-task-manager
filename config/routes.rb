@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  # creating a route to display all task
+  get "tasks", to:"tasks#index"
 end
