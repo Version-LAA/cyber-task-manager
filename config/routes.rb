@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   # creating a route to display all task
   get "tasks", to:"tasks#index"
+  get "tasks/:id", to:"tasks#show", as: :task
 end
