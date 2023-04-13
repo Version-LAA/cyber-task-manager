@@ -1,10 +1,30 @@
 <h1>Cyber Incident Tracker</h1>
 
-<ul>
+<ul class="list-group list-group-flush">
   <%@tasks.each do |task| %>
-    <li><%=link_to(task.title,task_path(task))%> <%=link_to("🗑",
+    <li class="list-group-item"><%=link_to(task.title,task_path(task))%><%=link_to("🗑",
       task_path(task),
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"})%></li>
   <%end%>
 </ul>
+
+<div>
+  <%@tasks.each do |task| %>
+  <div class="row">
+      <div class="col">
+        <%=link_to(task.title,task_path(task))%>
+      </div>
+      <div class="col">
+        <%=link_to("🗑",task_path(task),
+         data: {turbo_method: :delete,
+          turbo_confirm: "Are you sure?"})%>
+      </div>
+    </div>
+  <%end%>
+
+
+</div>
+
+<div id="create-new">
 <%= link_to "Create New Incident",tasks_new_path%>
+</div>
